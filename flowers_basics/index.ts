@@ -2,7 +2,7 @@
 
 function setup() {
   // <<< ADD YOUR CODE HERE
-  createCanvas(700, 600)
+  createCanvas(600, 600)
   background("cyan")
 
   // left arc
