@@ -16,11 +16,11 @@ function setup() {
   strokeWeight(0)
   //left flower
   fill("violet")
-  circle(100, 110, 70);
+  circle(135-44, 110-6.9, 70);
   circle(155, 100, 70);
-  circle(90, 165, 70);
+  circle(135-44, 165, 70);
   circle(145, 145+ 47.5, 70);
-  circle(185, 150, 70);
+  circle(135+50, 150, 70);
   fill("yellow")
   circle(135, 145, 65);
 
