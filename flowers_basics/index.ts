@@ -5,6 +5,15 @@ function setup() {
   createCanvas(500, 500)
   background("white")
 
-  circle(100, 100, 70);
-  circle(150, 100, 70);
+  noStroke()
+  strokeWeight(0)
+
+  fill("violet")
+  circle(100, 110, 70);
+  circle(155, 100, 70);
+  circle(90, 165, 70);
+  circle(145, 190, 70);
+  circle(185, 145, 70);
+  fill("yellow")
+  circle(135, 145, 70);
 }
