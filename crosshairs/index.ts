@@ -3,8 +3,9 @@ function setup() {
 }
 
 function mouseMoved() {
-  background("aqua")
+  background("lightblue")
   stroke("red")
+  strokeWeight(2)
   noFill()
   circle(mouseX, mouseY, 40)
   circle(mouseX, mouseY, 20)
