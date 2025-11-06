@@ -9,5 +9,6 @@
 
     stroke("wihte")
     noFill();
-    circle(mouseX, mouseY, 50);
-}
+   
+    circle(mouseX+15, mouseY-15, 30);
+    }
