@@ -28,11 +28,11 @@ function mouseMoved() {
     stroke("red")
     strokeWeight(2);
     line(mouseX, mouseY, mouseX, mouseY+b,mouseX, mouseY)
-    stroke("lightgreen")
+    stroke("lime")
     line(mouseX, mouseY, mouseX+a, mouseY, mouseX, mouseY)
     stroke("yellow")
     line(mouseX, mouseY+b, mouseX+a, mouseY+b, mouseX, mouseY)
-    stroke("blue")
+    stroke("aqua")
     line(mouseX+a, mouseY+b, mouseX+a, mouseY, mouseX, mouseY)
 
 }
