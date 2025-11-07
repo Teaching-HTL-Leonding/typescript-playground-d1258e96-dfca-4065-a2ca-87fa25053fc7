@@ -16,10 +16,8 @@ function mouseMoved() {
     let a=(width/2-mouseX)*2
     let b= (height/2- mouseY)*2
 
-    rect(mouseX, mouseY, (width/2- mouseX)*2, (height/2- mouseY)*2)
-   
     strokeWeight(1);
-    text(`Area: ${b*a}`, 5, height - 10);
+    text(`Area: ${abs(b*a)}`, 5, height - 10);
 
     strokeWeight(1);
     line(mouseX, mouseY, mouseX+ a, mouseY+b);
@@ -34,5 +32,4 @@ function mouseMoved() {
     line(mouseX, mouseY+b, mouseX+a, mouseY+b, mouseX, mouseY)
     stroke("aqua")
     line(mouseX+a, mouseY+b, mouseX+a, mouseY, mouseX, mouseY)
-
 }
