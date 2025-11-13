@@ -12,7 +12,7 @@ function draw() {
     background("black")
     noStroke()
     fill(colorHue, 100, 100)
-    colorHue=(colorHue+1)% 360
+    colorHue=(colorHue+5)% 360
     circle(x, x, x)
     x=x+1
     x=x % 300 // %300= 300/300= 0Rest (0 ist oben)
