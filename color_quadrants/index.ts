@@ -28,7 +28,7 @@ function mouseClicked() {
 
     noStroke()
     fill("white")
-    textSize(40)
+    textSize(35)
     textAlign(CENTER, CENTER)
 
     noStroke()
