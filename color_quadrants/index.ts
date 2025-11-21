@@ -38,17 +38,14 @@ function mouseClicked() {
 
     let s: string
     if (mouseX < width / 2) {
-        if(mouseX <height)
-        s = 'Orange'
+        if (mouseY < height / 2) { s = 'Orange' }
+        else { s = 'Blue' }
+
     }
     else if (mouseX < width / 2 * 2) {
-        s = 'Green'
-    }
-    else if (mouseX < height / 2) {
-        s = 'Blue'
-    }
-    else {
-        s = 'Red'
+        if (mouseY < height / 2) { s = 'Green' }
+        else s = 'Red'
+
     }
     text(s, width / 2, height - half);
 }
