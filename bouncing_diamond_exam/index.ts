@@ -1,4 +1,4 @@
-const num = Math.floor(0, 10)
+const num = Math.floor(10)
 
 const diamondDiameter = 50;
 
@@ -42,5 +42,6 @@ function draw() {
     fill("black");
     noStroke();
 
-    text(num, )
+    textSize(30)
+    text(num, diamondCenterX, diamondCenterY+1.2)
 }
