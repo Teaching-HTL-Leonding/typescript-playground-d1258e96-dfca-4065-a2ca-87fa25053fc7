@@ -36,8 +36,10 @@ function setup() {
     // Draw right part of the lines
     stroke("red");
     // <<< Write your code here
-    while (i < 25) {
-        line(i,SIZE+GRID, GRID, SIZE+GRID);
+        i = GRID;
+    while (i < SIZE) {
+        line(SIZE-GRID, i, GRID+i-GRID, i);
         i += GRID;
-    }
+    } 
+
 }
