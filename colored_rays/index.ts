@@ -17,7 +17,7 @@ function draw() {
   let i = MARGIN;
 
   stroke(rayColor, 100, 100);
-  rayColor = (rayColor + 0.25) % 360;
+  rayColor = (rayColor + 0.5) % 360;
 
   while (i <= SIZE - MARGIN) {
 
