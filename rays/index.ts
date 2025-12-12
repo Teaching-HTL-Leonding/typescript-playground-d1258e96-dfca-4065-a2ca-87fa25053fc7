@@ -13,22 +13,22 @@ function mouseMoved() {
   background("black");
   strokeWeight(2);
 
-  stroke("yellow");
   // <<< Add your code here
 
-  i = MARGIN;
-  while (i < SIZE) {
-    line(MARGIN, i, mouseX, mouseY);
-    line(mouseX, mouseY, SIZE-MARGIN, i);
-    i += MARGIN;
-  }
+  for (i = MARGIN; i < SIZE; i += MARGIN) {
 
-  stroke("lime")
+    stroke("yellow");
+    line(SIZE + MARGIN - SIZE, i, mouseX, mouseY);
+    line(SIZE - MARGIN, i, mouseX, mouseY);
 
-  i = MARGIN;
-  while (i < SIZE) {
+    stroke("lime")
     line(i, MARGIN, mouseX, mouseY);
-    line(mouseX, mouseY, i, SIZE-MARGIN);
-    i += MARGIN;
+    line(mouseX, mouseY, i, SIZE - MARGIN);
   }
+
+
+
+
+
 }
+
