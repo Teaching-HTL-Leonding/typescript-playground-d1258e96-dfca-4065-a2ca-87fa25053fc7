@@ -7,10 +7,10 @@ function setup() {
 
     noStroke();
 
-    let i=1
-    while(i<8){
+    
+    for(let i=1;i<8;i+=2){
         fill("yellow")
         rect(0,i*STRIPE_THICKNESS,width,STRIPE_THICKNESS)
-        i+=2
+        
     }
 }
