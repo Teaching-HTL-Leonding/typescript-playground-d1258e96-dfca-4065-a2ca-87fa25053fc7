@@ -22,7 +22,7 @@ function setup() {
         }
 
         // Restore the stored origin -> back to left-most position in the current row
-        pop();
+        pop()
 
         // Move one row down
         translate(0, CIRCLE_DIAMETER);
