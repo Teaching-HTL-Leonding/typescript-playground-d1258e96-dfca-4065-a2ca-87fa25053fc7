@@ -12,7 +12,6 @@ function setup() {
 
 function draw() {
     background("white");
-
     fill('lightgray');
     stroke('darkgray');
     rect(0, 0, DIAM, height);
@@ -21,13 +20,15 @@ function draw() {
     stroke('gold');
 
     for (let i = 0; i < circleX.length; i++) {
+
         push()
         circle(circleX[i], circleY[i], DIAM);
 
-        (circleX[i] - RADI < 0 || circleX[i] + RADI > width) 
+        if (circleX[i] - RADI < 0 || circleX[i] + RADI > width) {
             direction[i] *= -1;
-            circleX[i] = max(RADI, min(width - RADI, circleX[i]));
-        
+        } 
+        circleX[i] = max(RADI, min(width - RADI, circleX[i]));
+
         pop()
         circleX[i] += SPEED * direction[0];
     }
@@ -39,5 +40,5 @@ function draw() {
 function mouseClicked() {
     circleX.push(mouseX)
     circleY.push(mouseY)
-    direction.push(0)
+    direction.push(1)
 }
