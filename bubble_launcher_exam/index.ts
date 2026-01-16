@@ -19,9 +19,11 @@ function draw() {
     fill('yellow');
     stroke('gold');
 
+    circle(10, mouseY - 10, DIAM);
+    
     for (let i = 0; i < circleX.length; i++) {
 
-        circle(10, mouseY - 10, DIAM);
+       
         circle(circleX[i], circleY[i], DIAM);
 
         if (circleX[i] - RADI < 0 || circleX[i] + RADI > width) {
