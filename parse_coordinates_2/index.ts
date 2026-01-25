@@ -15,8 +15,8 @@ function setup() {
     let coordinates = ""
     let isFirstPoint = true
 
-    for (let ix = 0; ix < points.length; ix++) {
-        let ch = points[ix];
+    for (let i = 0; i < points.length; i++) {
+        let ch = points[i];
 
         if (ch === ',') {
 
