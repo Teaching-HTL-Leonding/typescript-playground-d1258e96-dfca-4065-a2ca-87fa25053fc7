@@ -16,14 +16,14 @@ function setup() {
     let isFirstPoint = true
 
     for (let i = 0; i < points.length; i++) {
-        let ch = points[i];
+        let p = points[i];
 
-        if (ch === ',') {
+        if (p === ',') {
 
             x2 = parseInt(coordinates)
             coordinates = ""
 
-        } else if (ch === " ") {
+        } else if (p === " ") {
 
             y2 = parseInt(coordinates)
 
@@ -36,7 +36,7 @@ function setup() {
             isFirstPoint = false
             coordinates = ""
         } else {
-            coordinates += ch
+            coordinates += p
         }
     }
     y2 = parseInt(coordinates)
