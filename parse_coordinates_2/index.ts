@@ -5,7 +5,6 @@ const points = "200,100 300,150 300,250 200,300 100,250 100,150 200,100";
 function setup() {
     createCanvas(400, 400);
     background("white");
-    noFill();
     stroke("black");
     strokeWeight(3);
 
@@ -13,35 +12,33 @@ function setup() {
     let y1 = 0
     let x2 = 0
     let y2 = 0
-
     let coordinates = ""
+    let isFirstPoint = true
 
+    for (let ix = 0; ix < points.length; ix++) {
+        let ch = points[ix];
 
-    for (let i = 0; i < points.length; i++) {
-        if (points[i] === ',') {
-            line(x1, y1, x2, y2)
+        if (ch === ',') {
 
             x2 = parseInt(coordinates)
-            x1 = parseInt(coordinates)
             coordinates = ""
 
-        } else if (points[i] === ' ') {
+        } else if (ch === " ") {
 
             y2 = parseInt(coordinates)
-            y1 = parseInt(coordinates)
-            line(x1, y1, x2, y2)
-            point(x2, y2)
+
+            if (!isFirstPoint) {
+                line(x1, y1, x2, y2)
+            }
+            x1 = x2
+            y1 = y2
+
+            isFirstPoint = false
             coordinates = ""
         } else {
-            coordinates += points[i]
+            coordinates += ch
         }
     }
-    y1 = parseInt(coordinates)
-    point(x1, y1)
-    //line(200, 100, 300, 150)
-    //line(200, 100, 100, 150)
-    //line(300, 150, 300, 250)
-    //line(100, 150, 100, 250)
-    //line(100, 250, 200, 300)
-    //line (200, 300, 300, 250)
+    y2 = parseInt(coordinates)
+    line(x1, y1, x2, y2)
 }
