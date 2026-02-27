@@ -11,9 +11,6 @@ function setup() {
   smile(true);
 }
 
-
-
-
 // Function DEFINITION
 //       +-------------------------- Function name
 //       |     +-------------------- Parameter name
