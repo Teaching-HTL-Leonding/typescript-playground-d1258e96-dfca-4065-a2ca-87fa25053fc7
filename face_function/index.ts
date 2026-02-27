@@ -11,10 +11,7 @@ function setup() {
   smile(true);
 }
 
-function mouseClicked() {
-  nextSmiling = !nextSmiling;
-  smile(nextSmiling);
-}
+
 
 
 // Function DEFINITION
@@ -50,5 +47,9 @@ function smile(happy: boolean) {
   }
 
   pop();
-}  
+}
 
+function mouseClicked() {
+  nextSmiling = !nextSmiling;
+  smile(nextSmiling);
+}
