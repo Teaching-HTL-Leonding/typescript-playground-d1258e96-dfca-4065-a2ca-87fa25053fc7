@@ -42,7 +42,7 @@ function drawCircle(colored: boolean) {
   if (colored) {
     fill(0, 150, 255);
   } else {
-    noFill();
+    fill("lightgrey");
   }
 
   stroke(0);
