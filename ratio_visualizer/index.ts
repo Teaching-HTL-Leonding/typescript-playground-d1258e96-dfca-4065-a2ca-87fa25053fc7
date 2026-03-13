@@ -1,50 +1,58 @@
-let n: number; // Zufallszahl für gefärbte Kreise
-const cols = 10;
-const rows = 10;
-const size = 40;
+// A grid of 10x10 circles represents 100 units.
+// A random number n (0–100) determines how many circles are "filled".
+// Circles are counted left-to-right, top-to-bottom.
 
-function setup() {
-  createCanvas(500, 500);
+// Canvas / layout constants
+const COLS = 10;
+const ROWS = 10;
+const CELL_SIZE = 46;  // distance between circle centers
+const MARGIN = 10;
+const TITLE_HEIGHT = 35;
 
-  n = floor(random(0, 101)); // Zufallszahl von 0 bis 100
+// Colors
+const COLOR_FILLED = "steelblue";
+const COLOR_EMPTY = "lightgray";
+const COLOR_STROKE = "white";
 
-  textAlign(CENTER);
-  textSize(24);
+// The random number we want to visualize (0–100)
+let randomNumber: number;
 
-  background(255);
-
-  // Titel anzeigen
-   text("Random number: " + n + "/100", width / 2, 40);
-
-  // Ursprung zum ersten Kreis verschieben
-  translate(50, 80);
-
-  // 10x10 Kreise zeichnen
-  for (let y = 0; y < rows; y++) {
-    for (let x = 0; x < cols; x++) {
-      const index = y * cols + x;
-
-      push();
-      translate(x * size, y * size);
-      drawCircle(isColored(index, n));
-      pop();
+function isFilled(circleNumber: number): boolean {
+    return circleNumber <= randomNumber
+}
+function drawCircle(filled: boolean) {
+    if (filled) {
+        fill(COLOR_FILLED)
+    } else {
+        fill(COLOR_EMPTY)
     }
-  }
+
+    stroke(COLOR_STROKE)
+    circle(0, 0, CELL_SIZE * 0.8)
 }
 
-// Funktion 1: entscheidet ob Kreis gefärbt wird
-function isColored(index: number, n: number): boolean {
-  return index < n;
-}
 
-// Funktion 2: zeichnet einen Kreis
-function drawCircle(colored: boolean) {
-  if (colored) {
-    fill(0, 150, 255);
-  } else {
-    fill("lightgrey");
-  }
+function setup(): void {
+    createCanvas(COLS * CELL_SIZE + 2 * MARGIN, ROWS * CELL_SIZE + TITLE_HEIGHT + MARGIN);
+    randomNumber = Math.floor(Math.random() * 101);
+    background("white");
 
-  stroke(0);
-  circle(0, 0, 30);
+    noStroke();
+    fill("black");
+    textSize(14);
+    textAlign(CENTER);
+    text(`Random number: ${randomNumber} / 100`, width / 2, 20);
+
+    translate(MARGIN + CELL_SIZE / 2, TITLE_HEIGHT + CELL_SIZE / 2)
+
+    let counter = 1
+    for (let row = 0; row < ROWS; row++) {
+        for (let col = 0; col < COLS; col++) {
+            let filled = isFilled(counter)
+            drawCircle(filled)
+            translate(CELL_SIZE, 0)
+            counter++
+        }
+        translate(-COLS * CELL_SIZE, CELL_SIZE)
+    }
 }
