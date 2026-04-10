@@ -23,12 +23,13 @@ function setup() {
         for (let a = 0; a < 7; a++) {
         push();
         for (let x = 0; x < 4; x++){
-            line(65, 25, 95, 25)
-            translate(95,0)
+            line(260, 170, 260, 170)
+            translate(0,10)
         }
         pop();
-        translate(0,-1)
+        translate(10,0)
     }
+    translate(0,-1)
     drawHexagon()
     drawComb()
 }
