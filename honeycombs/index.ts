@@ -21,28 +21,26 @@ function setup() {
     //
     // Each line() call: line(x1, y1, x2, y2)
     drawHexagon()
+    drawComb()
 
 }
 function drawHexagon() {
-    for (let i = 0; i < 9; i++) {
-        line(0, 25, 20, 0)
-        line(20, 0, 45, 0)
-        line(45, 0, 65, 25)
-        line(65, 25, 45, 50)
-        line(45, 50, 20, 50)
-        line(20, 50, 0, 25)
-    }
-    drawComb()
+    line(0, 25, 20, 0)
+    line(20, 0, 45, 0)
+    line(45, 0, 65, 25)
+    line(65, 25, 45, 50)
+    line(45, 50, 20, 50)
+    line(20, 50, 0, 25)
 }
 
 function drawComb() {
     for (let i = 0; i < 11; i++) {
         push();
         for (let j = 0; j < 11; j++) {
-        drawHexagon()
-        translate(12,15)
+            drawHexagon()
+            translate(15, 1)
         }
         pop();
-        translate(15,12)
+        translate(15, 1)
     }
 }
