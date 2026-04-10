@@ -1,5 +1,5 @@
 function setup() {
-    createCanvas(1460, 1370);   // create a 450×370 px drawing surface
+    createCanvas(460, 370);   // create a 450×370 px drawing surface
     background("black");      // fill the canvas with black
     stroke("yellow");         // all future lines will be yellow
     // (no fill() call → shapes are outlines only)
