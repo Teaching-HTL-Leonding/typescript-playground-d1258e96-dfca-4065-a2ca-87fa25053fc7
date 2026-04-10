@@ -1,5 +1,5 @@
 function setup() {
-    createCanvas(450, 370);   // create a 450×370 px drawing surface
+    createCanvas(1460, 1370);   // create a 450×370 px drawing surface
     background("black");      // fill the canvas with black
     stroke("yellow");         // all future lines will be yellow
     // (no fill() call → shapes are outlines only)
@@ -20,9 +20,17 @@ function setup() {
     //          (20,50) ──────── (45,50)
     //
     // Each line() call: line(x1, y1, x2, y2)
+        for (let a = 0; a < 7; a++) {
+        push();
+        for (let x = 0; x < 4; x++){
+            line(65, 25, 95, 25)
+            translate(95,0)
+        }
+        pop();
+        translate(0,-1)
+    }
     drawHexagon()
     drawComb()
-
 }
 function drawHexagon() {
     line(0, 25, 20, 0)
@@ -31,16 +39,19 @@ function drawHexagon() {
     line(65, 25, 45, 50)
     line(45, 50, 20, 50)
     line(20, 50, 0, 25)
+
 }
 
 function drawComb() {
-    for (let i = 0; i < 11; i++) {
+    for (let i = 0; i < 7; i++) {
         push();
-        for (let j = 0; j < 11; j++) {
+        for (let j = 0; j < 5; j++) {
             drawHexagon()
-            translate(15, 1)
+            translate(95, 0)
+            
         }
         pop();
-        translate(15, 1)
+        translate(0, 50)
+        
     }
 }
